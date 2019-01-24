@@ -1,5 +1,19 @@
 .dashboard {
   height: 100%;
-  
+
+  display: grid;
+
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: repeat(24, 1fr);
+
   background-color: var(--color-gray-50);
+}
+
+.dashboard > * {
+  overflow: hidden;
+}
+
+.squid {
+  background: var(--color-gray-60);
+  grid-column-start: var(--colStart);
 }
