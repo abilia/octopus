@@ -12,6 +12,13 @@ export class Dashboard extends Component {
           colEnd: 20,
           rowStart: 3,
           rowEnd: 21
+        },
+        {
+          name: 'Squid 2',
+          colStart: 1,
+          colEnd: 8,
+          rowStart: 2,
+          rowEnd: 15
         }
       ]
     }

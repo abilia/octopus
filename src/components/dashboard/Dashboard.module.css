@@ -5,8 +5,7 @@
 
   grid-template-columns: repeat(24, 1fr);
   grid-template-rows: repeat(24, 1fr);
-
-  background-color: var(--color-gray-50);
+  grid-gap: 0.5rem;
 }
 
 .dashboard > * {
@@ -14,6 +13,8 @@
 }
 
 .squid {
+  border-radius: 0.5rem;
+
   background: var(--color-gray-60);
-  grid-column-start: var(--colStart);
+  box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, 0.1);
 }
