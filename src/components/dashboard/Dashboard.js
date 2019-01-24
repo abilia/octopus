@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import styles from './Dashboard.module.css';
 
 export class Dashboard extends Component {
   render() {
-    return <>Dis is dashboard</>
+    return <div className={styles.dashboard}>Dis is dashboard</div>
   }
 }
