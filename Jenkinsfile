@@ -1,7 +1,11 @@
 pipeline {
     agent any
 
-    stages {
+    node() {
+		stage('Checkout') {
+			//checkout scm
+		}
+
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -9,10 +13,11 @@ pipeline {
 				// npm run build
             }
         }
+
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-				cp -r build/* /build/octopus/app/*
+				sh 'cp -r build/* /build/octopus/app/*'
             }
         }
     }
