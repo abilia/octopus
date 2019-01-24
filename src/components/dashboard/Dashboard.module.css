@@ -8,13 +8,21 @@
   grid-gap: 0.5rem;
 }
 
-.dashboard > * {
-  overflow: hidden;
-}
-
 .squid {
   border-radius: 0.5rem;
+  position: relative;
 
   background: var(--color-gray-60);
   box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.squid::before {
+  position: absolute;
+  left: 1rem;
+  top: -0.5rem;
+  padding: 0.25rem;
+
+  content: attr(data-name);
+
+  background-color: #fff;
 }

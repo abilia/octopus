@@ -35,7 +35,7 @@ export class Dashboard extends Component {
   render() {
     return (
       <div className={styles.dashboard}>
-        {this.state.squids.map(squid => <div className={styles.squid} style={this.getStyle(squid)}/>)}
+        {this.state.squids.map(squid => <div className={styles.squid} style={this.getStyle(squid)} data-name={squid.name}/>)}
       </div>
     )
   }
