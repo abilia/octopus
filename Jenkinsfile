@@ -5,16 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
+				npm install
+				npm run build
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying..'
+				cp -r build/* /build/octopus/app/*
             }
         }
     }
