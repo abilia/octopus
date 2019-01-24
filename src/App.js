@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Dashboard } from './components/dashboard/Dashboard'
+import { Dashboard } from './components/dashboard/Dashboard';
+
+import './normalize.css';
 
 class App extends Component {
   render() {
