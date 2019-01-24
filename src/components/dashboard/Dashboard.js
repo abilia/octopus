@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './Dashboard.module.css'
-import { RssFeedSquidContainer } from "../RssFeedSquid/RssFeedSquidContainer";
+import { FsDataDisruptionSquidContainer } from "../RssFeedSquid/FsDataDisruptionSquidContainer";
 
 export class Dashboard extends Component {
   constructor(props) {
@@ -42,7 +42,7 @@ export class Dashboard extends Component {
         {this.state.squids.map(squid => <div key={squid.id} className={styles.squid} style={this.getStyle(squid)} data-name={squid.name}/>)}
       </div>
       <div>
-        <RssFeedSquidContainer />
+        <FsDataDisruptionSquidContainer />
       </div>
       </div>
     )
