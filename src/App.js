@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import { Dashboard } from './components/dashboard/Dashboard';
-
+import styles from './App.module.css';
 import './normalize.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className={styles.app}>
         <header>
-          header
+          <h1>Octopus</h1>
         </header>
-        <main>
+
+        <main className={styles.main}>
           <Dashboard/>
         </main>
+
         <footer>
-          footer
+          <span>footer</span>
         </footer>
       </div>
     );
