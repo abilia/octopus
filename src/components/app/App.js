@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Dashboard } from './components/dashboard/Dashboard';
+import { Dashboard } from '../dashboard/Dashboard';
 import styles from './App.module.css';
-import './normalize.css';
-import './colors.css';
 
 class App extends Component {
   render() {
