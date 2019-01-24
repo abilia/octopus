@@ -13,7 +13,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-				sh 'cp -r build/* /build/octopus/app/*'
+				sh 'cp -r build/* /build/octopus/app/'
             }
         }
     }
