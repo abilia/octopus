@@ -1,0 +1,78 @@
+:root {
+  /*
+      Colors:
+  */
+
+  /* Gray */
+  --color-gray-100: #000000;
+  --color-gray-90: #262626;
+  --color-gray-80: #4d4d4d;
+  --color-gray-60: #747474;
+  --color-gray-50: #9c9c9c;
+  --color-gray-40: #c3c3c3;
+  --color-gray-20: #d7d7d7;
+  --color-gray-10: #eeeeee;
+  --color-gray-0: #ffffff;
+
+  /* AbiliaRed */
+  --color-abiliared-170: #4a0313;
+  --color-abiliared-120: #a6062a;
+  --color-abiliared-110: #b8072f;
+  --color-abiliared-100: #ca0733;
+  --color-abiliared-80: #d33458;
+  --color-abiliared-40: #eba4b4;
+  --color-abiliared-10: #fae8ec;
+
+  /* DarkBlue */
+  --color-darkblue-170: #0b2c47;
+  --color-darkblue-120: #1762a0;
+  --color-darkblue-110: #1a6db2;
+  --color-darkblue-100: #1c77c3;
+  --color-darkblue-80: #458fcd;
+  --color-darkblue-40: #accde9;
+  --color-darkblue-10: #eaf2f9;
+
+  /* Green */
+  --color-green-170: #18461e;
+  --color-green-120: #308b3b;
+  --color-green-110: #369d43;
+  --color-green-100: #3cae4a;
+  --color-green-80: #52c460;
+  --color-green-40: #b9e7bf;
+  --color-green-10: #edf9ef;
+
+  /* Yellow */
+  --color-yellow-170: #5c4413;
+  --color-yellow-120: #cf9829;
+  --color-yellow-110: #e6a92e;
+  --color-yellow-100: #fcb932;
+  --color-yellow-80: #fcc557;
+  --color-yellow-40: #fde5b4;
+  --color-yellow-10: #fef8ec;
+
+  /* Blue */
+  --color-blue-170: #124557;
+  --color-blue-120: #289ac2;
+  --color-blue-110: #2cabd8;
+  --color-blue-100: #30bced;
+  --color-blue-80: #55c8f0;
+  --color-blue-40: #b3e6f8;
+  --color-blue-10: #ecf8fd;
+
+  /* Categories */
+  --color-category-purple: #ffd6fa;
+  --color-category-red: #ffaaaa;
+  --color-category-orange: #ffe5cc;
+  --color-category-green: #c4ffc7;
+  --color-category-cyan: #ccfff0;
+  --color-category-blue: #cce5ff;
+
+  /* WeekDays */
+  --color-monday: #2e9412;
+  --color-tuesday: #3478c7;
+  --color-wednesday: #f7f7f7;
+  --color-thursday: #8c4915;
+  --color-friday: #fab905;
+  --color-saturday: #b84baf;
+  --color-sunday: #db3c39;
+}

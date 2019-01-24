@@ -6,7 +6,7 @@
 }
 
 .header {
-
+  background-color: var(--color-abiliared-100);
 }
 
 .main {
@@ -14,5 +14,9 @@
 }
 
 .footer {
+  background-color: var(--color-gray-50);
+}
 
+.header, .footer {
+  color: var(--color-gray-0);
 }
