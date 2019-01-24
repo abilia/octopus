@@ -5,18 +5,15 @@
   min-height: 100vh;
 }
 
-.header {
-  background-color: var(--color-abiliared-100);
-}
-
 .main {
   flex-grow: 1;
+
+  padding: 1rem;
 }
 
 .footer {
   background-color: var(--color-gray-50);
-}
-
-.header, .footer {
   color: var(--color-gray-0);
+
+  padding: 1rem;
 }
