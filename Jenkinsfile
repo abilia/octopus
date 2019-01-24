@@ -5,15 +5,15 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-				// npm install
-				// npm run build
+				sh 'npm install'
+				sh 'npm run build'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
-				sh 'cp -r build/* /build/octopus/app/*'
+				sh 'cp -r build/* /build/octopus/app/'
             }
         }
     }
