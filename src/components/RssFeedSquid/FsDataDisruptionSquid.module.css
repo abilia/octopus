@@ -1,0 +1,15 @@
+.fsdata {
+    background-color: white;
+    padding: 1%;
+}
+
+.fsdata .header {
+    font-size: 32px;
+}
+
+.fsdata .disruptions {
+}
+
+.fsdata .disruptions div {
+    font-weight: bold;
+}

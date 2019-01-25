@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import { FsDataDisruptionSquid } from './FsDataDisruptionSquid'
+import { formatDateTime } from '../../common/utils';
 
 var parseString = require('react-native-xml2js').parseString;
 
 export class FsDataDisruptionSquidContainer extends Component {
     constructor(props) {
         super(props);
+
+        this.maxDisruptions = 5;
+
         this.state = {
             activeDisruptions: [],
             earlierDisruptions: []
@@ -18,22 +22,23 @@ export class FsDataDisruptionSquidContainer extends Component {
         const resAsXml = await res.text();
 
         parseString(resAsXml, (err, result) => {
-            console.log(result.rss.channel[0].item);
             const disruptions = result.rss.channel[0].item.map(
                 it => {
                     return {
-                        date: new Date(it.pubDate[0]).toISOString(),
+                        id: Math.random(),
+                        date: formatDateTime(new Date(it.pubDate[0]).toISOString()),
                         title: it.title[0],
-                        link: it.link[0]
+                        link: it.link[0],
+                        active: it.active
                     }
                 }
             );
-
-            console.log(disruptions);
+            const activeDisruptions =  disruptions.filter(it => !it.active);
+            const earlierDisruptions = disruptions.filter(it => it.active).slice(0, this.maxDisruptions);
 
             this.setState({
-                activeDisruptions: ['hej'],
-                earlierDisruptions: []
+                activeDisruptions,
+                earlierDisruptions
             });
         });
     }
