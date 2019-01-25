@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import styles from './Dashboard.module.css'
-import { FsDataDisruptionSquidContainer } from "../RssFeedSquid/FsDataDisruptionSquidContainer";
+import { FsDataDisruptionSquidContainer } from '../RssFeedSquid/FsDataDisruptionSquidContainer'
 
 export class Dashboard extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       squids: [
         {
@@ -17,7 +17,8 @@ export class Dashboard extends Component {
         },
         {
           id: 1,
-          name: 'Squid 2',
+          name: 'Driftstörningar',
+          component: <FsDataDisruptionSquidContainer/>,
           colStart: 1,
           colEnd: 8,
           rowStart: 2,
@@ -26,6 +27,7 @@ export class Dashboard extends Component {
       ]
     }
   }
+
   getStyle(squid) {
     return {
       gridColumnStart: squid.colStart,
@@ -37,13 +39,14 @@ export class Dashboard extends Component {
 
   render() {
     return (
-      <div>
       <div className={styles.dashboard}>
-        {this.state.squids.map(squid => <div key={squid.id} className={styles.squid} style={this.getStyle(squid)} data-name={squid.name}/>)}
-      </div>
-      <div>
-        <FsDataDisruptionSquidContainer />
-      </div>
+        {this.state.squids.map(squid => {
+          return (
+            <div key={squid.id} className={styles.squid} style={this.getStyle(squid)} data-name={squid.name}>
+              {squid.component}
+            </div>
+          )
+        })}
       </div>
     )
   }

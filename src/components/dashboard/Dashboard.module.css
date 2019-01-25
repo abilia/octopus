@@ -10,6 +10,8 @@
 
 .squid {
   border-radius: 0.5rem;
+  padding: 1rem;
+
   position: relative;
 
   background: var(--color-gray-60);
@@ -18,7 +20,7 @@
 
 .squid::before {
   position: absolute;
-  left: 1rem;
+  left: 1.5rem;
   top: -0.5rem;
   padding: 0.25rem;
 
