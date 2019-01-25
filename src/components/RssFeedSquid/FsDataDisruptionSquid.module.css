@@ -1,15 +1,35 @@
 .fsdata {
-    background-color: white;
+    background-color: var(--color-category-blue);
     padding: 1%;
 }
 
-.fsdata .header {
-    font-size: 32px;
+.fsdata .disruptions ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.fsdata .disruptions {
+.fsdata .disruptions li {
+    display: flex;
+    margin: 0.25rem;
 }
 
-.fsdata .disruptions div {
+@media(max-width: 767px) {
+    .fsdata .disruptions li {
+        flex-direction: column;
+    }
+}
+
+.fsdata .disruptions .date {
+    flex: 0.9;
     font-weight: bold;
+}
+
+.fsdata .disruptions .title {
+    flex: 3;
+}
+
+.fsdata .disruptions a:link, a:visited {
+    text-decoration: none;
+    color: var(--color-darkblue-110);
 }

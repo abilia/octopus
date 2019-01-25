@@ -14,7 +14,7 @@ class App extends Component {
         </main>
 
         <footer className={styles.footer}>
-          <span>footer</span>
+          <span>Made by Abilia crew during Super Crazy Friday</span>
         </footer>
       </div>
     )
