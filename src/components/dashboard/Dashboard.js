@@ -10,7 +10,7 @@ export class Dashboard extends Component {
         {
           id: 0,
           name: 'Squid 1',
-          colStart: 7,
+          colStart: 12,
           colEnd: 20,
           rowStart: 3,
           rowEnd: 21

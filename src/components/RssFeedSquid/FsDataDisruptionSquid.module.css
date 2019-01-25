@@ -20,12 +20,7 @@
 .fsdata .disruptions li {
     display: flex;
     margin: 0.25rem;
-}
-
-@media(max-width: 767px) {
-    .fsdata .disruptions li {
-        flex-direction: column;
-    }
+    flex-direction: column;
 }
 
 .fsdata .disruptions .date {
