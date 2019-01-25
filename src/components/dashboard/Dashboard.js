@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Dashboard.module.css'
 import { FsDataDisruptionSquidContainer } from '../RssFeedSquid/FsDataDisruptionSquidContainer'
+import { BibleWordOfTodaySquidContainer } from "../RssFeedSquid/BibleWordOfTodaySquidContainer";
 
 export class Dashboard extends Component {
   constructor(props) {
@@ -23,6 +24,15 @@ export class Dashboard extends Component {
           colEnd: 8,
           rowStart: 2,
           rowEnd: 15
+        },
+        {
+          id: 2,
+          name: 'Dagens bibelord',
+          component: <BibleWordOfTodaySquidContainer/>,
+          colStart: 1,
+          colEnd: 12,
+          rowStart: 25,
+          rowEnd: 29
         }
       ]
     }
