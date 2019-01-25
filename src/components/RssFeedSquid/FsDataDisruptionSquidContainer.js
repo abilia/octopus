@@ -8,7 +8,7 @@ export class FsDataDisruptionSquidContainer extends Component {
     constructor(props) {
         super(props);
 
-        this.maxDisruptions = 1;
+        this.maxDisruptions = 5;
         this.reloadTime = 30 * 60 * 1000;
 
         this.state = {
