@@ -9,30 +9,22 @@ export class Dashboard extends Component {
     this.state = {
       squids: [
         {
-          id: 0,
-          name: 'Squid 1',
-          colStart: 12,
-          colEnd: 20,
-          rowStart: 3,
-          rowEnd: 21
-        },
-        {
           id: 1,
           name: 'Driftstörningar',
           component: <FsDataDisruptionSquidContainer/>,
           colStart: 1,
-          colEnd: 8,
-          rowStart: 2,
-          rowEnd: 15
+          colEnd: 12,
+          rowStart: 1,
+          rowEnd: 20
         },
         {
           id: 2,
           name: 'Dagens bibelord',
           component: <BibleWordOfTodaySquidContainer/>,
           colStart: 1,
-          colEnd: 12,
-          rowStart: 25,
-          rowEnd: 29
+          colEnd: 24,
+          rowStart: 20,
+          rowEnd: 25
         }
       ]
     }
@@ -57,6 +49,8 @@ export class Dashboard extends Component {
             </div>
           )
         })}
+        {/*<div className={styles.squid} style={{gridColumnStart:1, gridColumnEnd:3, gridRowStart:1, gridRowEnd: 2}}>Sqid Sqid Sqid Sqid Sqid Sqid Sqid Sqid Sqid Sqid </div>
+        <div className={styles.squid} style={{gridColumnStart:1, gridColumnEnd:12, gridRowStart:12, gridRowEnd: 24}}>Sqid</div>*/}
       </div>
     )
   }
