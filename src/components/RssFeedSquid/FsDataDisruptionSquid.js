@@ -18,19 +18,21 @@ export function FsDataDisruptionSquid(props) {
         <div className={styles.fsdata}>
             <h3>FSdata driftstörningar</h3>
             { props.activeDisruptions.length > 0 &&
-            <div className={styles.disruptions}>
+            <div className={[styles.disruptions, styles.active].join(' ')}>
                 <h4>Pågående</h4>
                 <ul>
                 { disruptionList(props.activeDisruptions) }
                 </ul>
             </div>
             }
-            <div className={styles.disruptions}>
-                <h4>Avslutade</h4>
-                <ul>
-                { disruptionList(props.earlierDisruptions) }
-                </ul>
-            </div>
+            { props.earlierDisruptions.length > 0 &&
+                <div className={styles.disruptions}>
+                    <h4>Avslutade</h4>
+                    <ul>
+                        {disruptionList(props.earlierDisruptions)}
+                    </ul>
+                </div>
+            }
         </div>
     )
 }

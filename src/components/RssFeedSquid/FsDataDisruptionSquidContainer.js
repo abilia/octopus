@@ -8,7 +8,8 @@ export class FsDataDisruptionSquidContainer extends Component {
     constructor(props) {
         super(props);
 
-        this.maxDisruptions = 5;
+        this.maxDisruptions = 1;
+        this.reloadTime = 30 * 60 * 1000;
 
         this.state = {
             activeDisruptions: [],
@@ -16,8 +17,7 @@ export class FsDataDisruptionSquidContainer extends Component {
         };
     }
 
-    async componentDidMount() {
-
+    async loadFeed() {
         const res = await fetch("https://cors-anywhere.herokuapp.com/https://status.fsdata.se/feed/");
         const resAsXml = await res.text();
 
@@ -41,6 +41,15 @@ export class FsDataDisruptionSquidContainer extends Component {
                 earlierDisruptions
             });
         });
+    }
+
+    async componentDidMount() {
+        this.loadFeed();
+        this.interval = setInterval(() => this.loadFeed(), this.reloadTime);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
     render() {

@@ -3,6 +3,14 @@
     padding: 1%;
 }
 
+.fsdata .disruptions {
+    padding: 0.5rem;
+}
+
+.fsdata .active {
+    border: 2px solid var(--color-abiliared-100);
+}
+
 .fsdata .disruptions ul {
     list-style-type: none;
     margin: 0;
