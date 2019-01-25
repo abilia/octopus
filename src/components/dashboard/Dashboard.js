@@ -22,7 +22,7 @@ export class Dashboard extends Component {
           name: 'Dagens bibelord',
           component: <BibleWordOfTodaySquidContainer/>,
           colStart: 1,
-          colEnd: 24,
+          colEnd: 25,
           rowStart: 20,
           rowEnd: 25
         }

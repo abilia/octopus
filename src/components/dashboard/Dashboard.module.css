@@ -12,13 +12,12 @@
   position: relative;
 
   border-radius: 0.5rem;
-  padding-top: 0.5rem;
+  padding: 2rem 1rem 1rem;
 
   max-height: 100%;
   overflow: scroll;
 
   background: var(--color-gray-0);
-  box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .squid::before {
@@ -28,7 +27,7 @@
   top: 0;
 
   height: 1.25rem;
-  padding: 0.25rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
 
   content: attr(data-name);
 
