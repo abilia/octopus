@@ -35,3 +35,10 @@
   border-bottom: 0.25rem solid var(--color-abiliared-100);
   color: var(--color-gray-0);
 }
+
+@media screen and (max-width: 768px) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+  }
+}
