@@ -5,19 +5,19 @@
 
   grid-template-columns: repeat(24, 1fr);
   grid-template-rows: repeat(24, 1fr);
-  grid-gap: 0.5rem;
+  grid-gap: 0.25rem;
 }
 
 .squid {
   position: relative;
 
-  border-radius: 0.5rem;
   padding: 2rem 1rem 1rem;
 
   max-height: 100%;
   overflow: scroll;
 
-  background: var(--color-gray-0);
+  background: var(--color-gray-80);
+  color: var(--color-gray-0);
 }
 
 .squid::before {

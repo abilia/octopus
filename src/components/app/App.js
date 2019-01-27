@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Dashboard } from '../dashboard/Dashboard'
 import styles from './App.module.css'
 import { Header } from '../header/Header'
+import { Footer } from '../footer/Footer'
 
 class App extends Component {
   render() {
@@ -13,9 +14,7 @@ class App extends Component {
           <Dashboard/>
         </main>
 
-        <footer className={styles.footer}>
-          <span>Made by Abilia crew during Super Crazy Friday</span>
-        </footer>
+        <Footer/>
       </div>
     )
   }

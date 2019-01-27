@@ -5,7 +5,7 @@ export class Header extends Component {
   render() {
     return (
       <header className={styles.header}>
-        <h1 className={styles.title}>Octopus</h1>
+        <h1 className={styles.title}>Octopus 🐙</h1>
       </header>
     )
   }

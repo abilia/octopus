@@ -16,7 +16,6 @@ export function FsDataDisruptionSquid(props) {
 
     return (
         <div className={styles.fsdata}>
-            <h3>FSdata driftstörningar</h3>
             { props.activeDisruptions.length > 0 &&
             <div className={[styles.disruptions, styles.active].join(' ')}>
                 <h4>Pågående</h4>

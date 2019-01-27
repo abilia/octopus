@@ -19,8 +19,7 @@
 }
 
 .fsdata .disruptions .date {
-    flex: 0.9;
-    font-weight: bold;
+    flex: 1;
 }
 
 .fsdata .disruptions .title {
@@ -29,5 +28,5 @@
 
 .fsdata .disruptions a:link, a:visited {
     text-decoration: none;
-    color: var(--color-darkblue-110);
+    color: var(--color-darkblue-80);
 }
