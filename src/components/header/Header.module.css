@@ -1,6 +1,6 @@
 .header {
   background-color: var(--color-gray-80);
-  border-bottom: 0.5rem solid var(--color-abiliared-100);
+  border-bottom: 2px solid var(--color-abiliared-100);
   color: var(--color-gray-0);
 
   padding: 1rem;
