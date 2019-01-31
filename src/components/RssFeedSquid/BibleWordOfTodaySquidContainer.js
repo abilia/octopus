@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BibleWordOfTodaySquid } from './BibleWordOfTodaySquid'
 import { parseString } from 'xml2js'
 import { ONE_DAY } from '../../common/constants'
+import { LoadingSpinner } from '../loadingSpinner/LoadingSpinner'
 
 export class BibleWordOfTodaySquidContainer extends Component {
   updateInterval
@@ -46,12 +47,12 @@ export class BibleWordOfTodaySquidContainer extends Component {
     const { bibleWord } = this.state
 
     return (
-      bibleWord ? (
+      /*bibleWord ? (
         <BibleWordOfTodaySquid
           title={bibleWord.title}
           text={bibleWord.description}
         />
-      ) : null
+      ) : */<LoadingSpinner/>
     )
   }
 }

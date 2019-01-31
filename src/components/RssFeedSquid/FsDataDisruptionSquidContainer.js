@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { FsDataDisruptionSquid } from './FsDataDisruptionSquid'
 import { formatDateTime } from '../../common/utils';
-
-var parseString = require('react-native-xml2js').parseString;
+import { parseString } from 'xml2js'
 
 export class FsDataDisruptionSquidContainer extends Component {
     constructor(props) {
