@@ -47,12 +47,12 @@ export class BibleWordOfTodaySquidContainer extends Component {
     const { bibleWord } = this.state
 
     return (
-      /*bibleWord ? (
+      bibleWord ? (
         <BibleWordOfTodaySquid
           title={bibleWord.title}
           text={bibleWord.description}
         />
-      ) : */<LoadingSpinner/>
+      ) : <LoadingSpinner/>
     )
   }
 }
