@@ -1,61 +1,55 @@
 import React, { Component } from 'react'
 import { BibleWordOfTodaySquid } from './BibleWordOfTodaySquid'
-import { formatDateTime } from '../../common/utils'
 import { parseString } from 'xml2js'
+import { ONE_DAY } from '../../common/constants'
 
 export class BibleWordOfTodaySquidContainer extends Component {
+  updateInterval
+
   constructor(props) {
     super(props)
 
-    this.reloadTime = 24 * 60 * 60 * 1000
-
     this.state = {
-      bibleWordOfToday: null
+      bibleWord: undefined
     }
   }
 
+  async componentDidMount() {
+    this.loadFeed().then(() => {
+      this.updateInterval = setInterval(this.loadFeed, ONE_DAY)
+    })
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.updateInterval)
+  }
+
   async loadFeed() {
-    const res = await fetch('https://cors-anywhere.herokuapp.com/http://www.bibeln.se/rss/dagens-bibelord.xml')
-    const resAsXml = await res.text()
+    const response = await fetch('https://cors-anywhere.herokuapp.com/http://www.bibeln.se/rss/dagens-bibelord.xml')
+    const responseXml = await response.text()
 
-    parseString(resAsXml, (err, result) => {
-      const item = result.rss.channel[ 0 ].item[ 0 ]
+    parseString(responseXml, (err, result) => {
+      const bibleWordInfo = result.rss.channel[ 0 ].item[ 0 ]
 
-      console.log(item)
-      const bibleWordOfToday = {
-        id: Math.random(),
-        date: formatDateTime(new Date(item.pubDate[ 0 ]).toISOString()),
-        title: item.title[ 0 ],
-        description: item.description[0].toString().substring(79, item.description[0].length - 4)
+      const bibleWord = {
+        title: bibleWordInfo.title[ 0 ],
+        description: bibleWordInfo.description[ 0 ].toString().substring(79, bibleWordInfo.description[ 0 ].length - 4) // lol
       }
 
-      console.log(bibleWordOfToday)
-
       this.setState({
-        bibleWordOfToday
+        bibleWord
       })
     })
   }
 
-  async componentDidMount() {
-    this.loadFeed()
-    this.interval = setInterval(() => this.loadFeed(), this.reloadTime)
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval)
-  }
-
   render() {
-    const {
-      bibleWordOfToday
-    } = this.state
+    const { bibleWord } = this.state
 
     return (
-      bibleWordOfToday ? (
+      bibleWord ? (
         <BibleWordOfTodaySquid
-          title={bibleWordOfToday.title}
-          text={bibleWordOfToday.description}
+          title={bibleWord.title}
+          text={bibleWord.description}
         />
       ) : null
     )
