@@ -28,10 +28,10 @@ export class BibleWordOfTodaySquidContainer extends Component {
   }
 
   async loadFeed() {
-    await fetchXml(this.bibleWordUrl, this.bibleWordExtractor.bind(this))
+    await fetchXml(this.bibleWordUrl, this.bibleWordExtractor)
   }
 
-  bibleWordExtractor = function (bibleWord) {
+  bibleWordExtractor = (bibleWord) => {
     const bibleWordData = bibleWord.rss.channel[0].item[0]
 
     const extractedBibleWord = {

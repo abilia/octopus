@@ -1,71 +1,74 @@
 import React, { Component } from 'react'
 import { FsDataDisruptionSquid } from './FsDataDisruptionSquid'
-import { formatDateTime } from '../../common/utils';
-import { parseString } from 'xml2js'
+import { formatDateTime } from '../../common/utils'
 import { LoadingSpinner } from '../loadingSpinner/LoadingSpinner'
+import { fetchXml } from '../../common/http'
+import { FIVE_MINUTES } from '../../common/constants'
 
 export class FsDataDisruptionSquidContainer extends Component {
-    constructor(props) {
-        super(props);
+  disruptionsUrl = 'https://cors-anywhere.herokuapp.com/https://status.fsdata.se/feed/'
 
-        this.maxDisruptions = 5;
-        this.reloadTime = 30 * 60 * 1000;
+  constructor(props) {
+    super(props)
 
-        this.state = {
-            activeDisruptions: [],
-            earlierDisruptions: []
-        };
+    this.maxDisruptions = 5
+
+    this.state = {
+      activeDisruptions: [],
+      earlierDisruptions: []
     }
+  }
 
-    async loadFeed() {
-        const res = await fetch("https://cors-anywhere.herokuapp.com/https://status.fsdata.se/feed/");
-        const resAsXml = await res.text();
+  async componentDidMount() {
+    this.loadFeed().then(() => {
+      this.interval = setInterval(() => this.loadFeed(), FIVE_MINUTES)
+    })
+  }
 
-        parseString(resAsXml, (err, result) => {
-            const disruptions = result.rss.channel[0].item.map(
-                it => {
-                    return {
-                        id: Math.random(),
-                        date: formatDateTime(new Date(it.pubDate[0]).toISOString()),
-                        title: it.title[0],
-                        link: it.link[0],
-                        active: it.active
-                    }
-                }
-            );
-            const activeDisruptions =  disruptions.filter(it => !it.active);
-            const earlierDisruptions = disruptions.filter(it => it.active).slice(0, this.maxDisruptions);
+  componentWillUnmount() {
+    clearInterval(this.interval)
+  }
 
-            this.setState({
-                activeDisruptions,
-                earlierDisruptions
-            });
-        });
-    }
+  extractDisruptions = (disruptions) => {
+    const extractedDisruptions = disruptions.rss.channel[0].item.map(disruption => {
+        return {
+          id: Math.random(),
+          date: formatDateTime(new Date(disruption.pubDate[0]).toISOString()),
+          title: disruption.title[0],
+          link: disruption.link[0],
+          active: disruption.active
+        }
+      }
+    )
 
-    async componentDidMount() {
-        this.loadFeed();
-        this.interval = setInterval(() => this.loadFeed(), this.reloadTime);
-    }
+    const activeDisruptions = extractedDisruptions.filter(it => !it.active)
+    const earlierDisruptions = extractedDisruptions
+      .filter(it => it.active)
+      .slice(0, this.maxDisruptions)
 
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
+    this.setState({
+      activeDisruptions,
+      earlierDisruptions
+    })
+  }
 
-    render() {
+  async loadFeed() {
+    await fetchXml(this.disruptionsUrl, this.extractDisruptions)
+  }
 
-        const {
-            activeDisruptions,
-            earlierDisruptions
-        } = this.state;
+  render() {
+    const {
+      activeDisruptions,
+      earlierDisruptions
+    } = this.state
 
-        return (
-          activeDisruptions.length > 0 || earlierDisruptions.length > 0 ? (
-            <FsDataDisruptionSquid
-                activeDisruptions={activeDisruptions}
-                earlierDisruptions={earlierDisruptions}
-            />
-          ) : <LoadingSpinner/>
-        )
-    }
+    return (
+      activeDisruptions.length > 0 || earlierDisruptions.length > 0 ? (
+        <FsDataDisruptionSquid
+          activeDisruptions={activeDisruptions}
+          earlierDisruptions={earlierDisruptions}
+        />
+      ) : <LoadingSpinner/>
+    )
+  }
 }
