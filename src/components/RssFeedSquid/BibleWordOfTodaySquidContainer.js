@@ -3,6 +3,7 @@ import { BibleWordOfTodaySquid } from './BibleWordOfTodaySquid'
 import { parseString } from 'xml2js'
 import { ONE_DAY } from '../../common/constants'
 import { LoadingSpinner } from '../loadingSpinner/LoadingSpinner'
+import { extractTextFromHtml } from '../../common/utils'
 
 export class BibleWordOfTodaySquidContainer extends Component {
   updateInterval
@@ -34,7 +35,7 @@ export class BibleWordOfTodaySquidContainer extends Component {
 
       const bibleWord = {
         title: bibleWordInfo.title[ 0 ],
-        description: bibleWordInfo.description[ 0 ].toString().substring(79, bibleWordInfo.description[ 0 ].length - 4) // lol
+        description: extractTextFromHtml(bibleWordInfo.description[ 0 ])
       }
 
       this.setState({

@@ -5,3 +5,8 @@ export function formatDateTime(isoDateAsString) {
     return dateTime.getFullYear() + '-' + paddingZero(dateTime.getMonth()+1) + '-' + paddingZero(dateTime.getDay())
     + ' ' + paddingZero(dateTime.getHours()) + ':' + paddingZero(dateTime.getMinutes());
 }
+
+export function extractTextFromHtml(html) {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || "";
+}
