@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Dashboard.module.css'
-import { FsDataDisruptionSquidContainer } from '../RssFeedSquid/FsDataDisruptionSquidContainer'
-import { BibleWordOfTodaySquidContainer } from "../RssFeedSquid/BibleWordOfTodaySquidContainer";
+import { FsDataDisruptionSquidContainer } from '../squidFsDataDisruption/FsDataDisruptionSquidContainer'
+import { BibleWordOfTodaySquidContainer } from "../squidBibleWordOfToday/BibleWordOfTodaySquidContainer";
 
 export class Dashboard extends Component {
   constructor(props) {
