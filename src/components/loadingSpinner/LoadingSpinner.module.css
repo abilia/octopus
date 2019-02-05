@@ -9,16 +9,6 @@
   --animation-distance: 50px;
 }
 
-.ballOne {
-  width: 30px;
-  height: 30px;
-  background-color: var(--color-abiliared-100);
-  content: ' ';
-  border-radius: 1rem;
-
-  animation: bounce 2s infinite ease-in-out;
-}
-
 .ballOne, .ballTwo, .ballThree {
   position: absolute;
   margin-top: 2rem;
