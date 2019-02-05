@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { FsDataDisruptionSquid } from './FsDataDisruptionSquid'
 import { formatDateTime } from '../../common/utils';
 import { parseString } from 'xml2js'
+import { LoadingSpinner } from '../loadingSpinner/LoadingSpinner'
 
 export class FsDataDisruptionSquidContainer extends Component {
     constructor(props) {
@@ -59,10 +60,12 @@ export class FsDataDisruptionSquidContainer extends Component {
         } = this.state;
 
         return (
+          activeDisruptions.length > 0 || earlierDisruptions.length > 0 ? (
             <FsDataDisruptionSquid
                 activeDisruptions={activeDisruptions}
                 earlierDisruptions={earlierDisruptions}
             />
+          ) : <LoadingSpinner/>
         )
     }
 }
