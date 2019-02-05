@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { BibleWordOfTodaySquid } from './BibleWordOfTodaySquid'
-import { parseString } from 'xml2js'
 import { ONE_DAY } from '../../common/constants'
 import { LoadingSpinner } from '../loadingSpinner/LoadingSpinner'
 import { extractTextFromHtml } from '../../common/utils'
+import { fetchXml } from '../../common/http'
 
 export class BibleWordOfTodaySquidContainer extends Component {
   updateInterval
+  bibleWordUrl = 'https://cors-anywhere.herokuapp.com/http://www.bibeln.se/rss/dagens-bibelord.xml'
 
   constructor(props) {
     super(props)
@@ -27,20 +28,19 @@ export class BibleWordOfTodaySquidContainer extends Component {
   }
 
   async loadFeed() {
-    const response = await fetch('https://cors-anywhere.herokuapp.com/http://www.bibeln.se/rss/dagens-bibelord.xml')
-    const responseXml = await response.text()
+    await fetchXml(this.bibleWordUrl, this.bibleWordExtractor.bind(this))
+  }
 
-    parseString(responseXml, (err, result) => {
-      const bibleWordInfo = result.rss.channel[ 0 ].item[ 0 ]
+  bibleWordExtractor = function (bibleWord) {
+    const bibleWordData = bibleWord.rss.channel[0].item[0]
 
-      const bibleWord = {
-        title: bibleWordInfo.title[ 0 ],
-        description: extractTextFromHtml(bibleWordInfo.description[ 0 ])
-      }
+    const extractedBibleWord = {
+      title: bibleWordData.title[0],
+      description: extractTextFromHtml(bibleWordData.description[0])
+    }
 
-      this.setState({
-        bibleWord
-      })
+    this.setState({
+      bibleWord: extractedBibleWord
     })
   }
 
