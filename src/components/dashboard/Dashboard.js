@@ -49,8 +49,6 @@ export class Dashboard extends Component {
             </div>
           )
         })}
-        {/*<div className={styles.squid} style={{gridColumnStart:1, gridColumnEnd:3, gridRowStart:1, gridRowEnd: 2}}>Sqid Sqid Sqid Sqid Sqid Sqid Sqid Sqid Sqid Sqid </div>
-        <div className={styles.squid} style={{gridColumnStart:1, gridColumnEnd:12, gridRowStart:12, gridRowEnd: 24}}>Sqid</div>*/}
       </div>
     )
   }
