@@ -1,3 +1,15 @@
 .dangerMode {
   background-color: var(--color-abiliared-110);
+  animation: pulse 1s infinite ease-in-out;
+  animation-direction: alternate;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: var(--color-abiliared-110);
+  }
+
+  100% {
+    background-color: var(--color-abiliared-170);
+  }
 }
