@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      dangerMode: true
+      dangerMode: false
     }
   }
 
@@ -25,9 +25,7 @@ class App extends Component {
       <div className={styles.app}>
         <Header dangerMode={dangerMode}/>
 
-        <main className={`${styles.main} ${dangerMode ? 'dangerMode' : ''}`}>
-          <Dashboard dangerMode={dangerMode} setDangerMode={this.setDangerMode}/>
-        </main>
+        <Dashboard dangerMode={dangerMode} setDangerMode={this.setDangerMode}/>
 
         <Footer/>
       </div>

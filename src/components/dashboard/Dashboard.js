@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Dashboard.module.css'
 import { FsDataDisruptionSquidContainer } from '../squidFsDataDisruption/FsDataDisruptionSquidContainer'
-import { BibleWordOfTodaySquidContainer } from "../squidBibleWordOfToday/BibleWordOfTodaySquidContainer";
+import { BibleWordOfTodaySquidContainer } from '../squidBibleWordOfToday/BibleWordOfTodaySquidContainer'
 
 export class Dashboard extends Component {
   constructor(props) {
@@ -13,18 +13,18 @@ export class Dashboard extends Component {
           name: 'Driftstörningar',
           component: <FsDataDisruptionSquidContainer/>,
           colStart: 1,
-          colEnd: 12,
+          colEnd: 5,
           rowStart: 1,
-          rowEnd: 20
+          rowEnd: 13
         },
         {
           id: 2,
           name: 'Dagens bibelord',
           component: <BibleWordOfTodaySquidContainer/>,
-          colStart: 1,
-          colEnd: 25,
-          rowStart: 20,
-          rowEnd: 25
+          colStart: 5,
+          colEnd: 8,
+          rowStart: 1,
+          rowEnd: 7
         }
       ]
     }
@@ -41,15 +41,19 @@ export class Dashboard extends Component {
 
   render() {
     return (
-      <div className={styles.dashboard}>
+      <main className={styles.dashboard}>
+
         {this.state.squids.map(squid => {
           return (
-            <div key={squid.id} className={styles.squid} style={this.getStyle(squid)} data-name={squid.name}>
-              {squid.component}
-            </div>
+            <article key={squid.id} className={styles.squid} style={this.getStyle(squid)}>
+              <header>{squid.name}</header>
+              <div className={styles.content}>
+                {squid.component}
+              </div>
+            </article>
           )
         })}
-      </div>
+      </main>
     )
   }
 }

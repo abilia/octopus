@@ -1,44 +1,41 @@
 .dashboard {
-  height: 100%;
+  flex-grow: 1;
+  padding: 0.5rem 0.5rem 0;
+  background-color: var(--color-gray-90);
 
   display: grid;
-
   grid-template-columns: repeat(24, 1fr);
   grid-template-rows: repeat(24, 1fr);
   grid-gap: 0.25rem;
+
+  --header-height: 2rem;
 }
-
-.squid {
-  position: relative;
-
-  padding: 2.25rem 1rem 1rem;
-
-  max-height: 100%;
-  overflow: scroll;
-
-  background: var(--color-gray-80);
-  color: var(--color-gray-0);
-}
-
-.squid::before {
-  position: absolute;
-  left: 0;
-  right:0;
-  top: 0;
-
-  height: 1.25rem;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-
-  content: attr(data-name);
-
-  background-color: var(--color-gray-60);
-  border-bottom: 1px solid var(--color-abiliared-100);
-  color: var(--color-gray-0);
-}
-
 @media screen and (max-width: 768px) {
   .dashboard {
     display: flex;
     flex-direction: column;
   }
 }
+
+.squid .content {
+  padding: 1rem;
+
+  height: calc(100% - var(--header-height));
+  overflow: scroll;
+
+  background: var(--color-gray-80);
+  color: var(--color-gray-0);
+}
+
+.squid header {
+  display: flex;
+  align-items: center;
+
+  height: var(--header-height);
+  padding-left: 1rem;
+
+  background-color: var(--color-gray-60);
+  border-bottom: 1px solid var(--color-abiliared-100);
+  color: var(--color-gray-0);
+}
+
