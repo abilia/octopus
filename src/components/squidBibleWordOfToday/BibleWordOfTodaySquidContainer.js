@@ -5,7 +5,7 @@ import { LoadingSpinner } from '../loadingSpinner/LoadingSpinner'
 import { extractTextFromHtml } from '../../common/utils'
 import { fetchXml } from '../../common/http'
 
-export class BibleWordOfTodaySquidContainer extends Component {
+class BibleWordOfTodaySquidContainer extends Component {
   updateInterval
   bibleWordUrl = 'https://cors-anywhere.herokuapp.com/http://www.bibeln.se/rss/dagens-bibelord.xml'
 
@@ -57,3 +57,5 @@ export class BibleWordOfTodaySquidContainer extends Component {
     )
   }
 }
+
+export { BibleWordOfTodaySquidContainer as BibleWordSquid}

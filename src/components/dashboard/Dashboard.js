@@ -1,27 +1,26 @@
 import React, { Component } from 'react'
 import styles from './Dashboard.module.css'
-import { FsDataDisruptionSquidContainer } from '../squidFsDataDisruption/FsDataDisruptionSquidContainer'
-import { BibleWordOfTodaySquidContainer } from '../squidBibleWordOfToday/BibleWordOfTodaySquidContainer'
+import { DataDisruptionSquid } from '../squidFsDataDisruption/FsDataDisruptionSquidContainer'
+import { BibleWordSquid } from '../squidBibleWordOfToday/BibleWordOfTodaySquidContainer'
 import { Squid } from '../squid/Squid'
 
 export class Dashboard extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      dangerMode: false,
       squids: [
         {
-          id: 1,
           name: 'Driftstörningar',
-          component: <FsDataDisruptionSquidContainer/>,
+          component: <DataDisruptionSquid/>,
           colStart: 1,
           colEnd: 5,
           rowStart: 1,
           rowEnd: 13
         },
         {
-          id: 2,
           name: 'Dagens bibelord',
-          component: <BibleWordOfTodaySquidContainer/>,
+          component: <BibleWordSquid/>,
           colStart: 5,
           colEnd: 8,
           rowStart: 1,
@@ -31,10 +30,21 @@ export class Dashboard extends Component {
     }
   }
 
+  configureSquid(squids) {
+    squids.forEach((squid, index) => {
+      squid.id = index
+      squid.setDangerMode = this.props.dangerMode
+    })
+
+    return squids
+  }
+
   render() {
+    const squids = this.configureSquid(this.state.squids)
+
     return (
       <main className={styles.dashboard}>
-        {this.state.squids.map(squidData => <Squid squidData={squidData} key={squidData.id}/>)}
+        {squids.map(squidData => <Squid squidData={squidData} key={squidData.id}/>)}
       </main>
     )
   }

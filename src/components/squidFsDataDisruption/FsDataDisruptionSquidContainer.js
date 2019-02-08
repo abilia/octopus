@@ -5,7 +5,7 @@ import { LoadingSpinner } from '../loadingSpinner/LoadingSpinner'
 import { fetchXml } from '../../common/http'
 import { FIVE_MINUTES } from '../../common/constants'
 
-export class FsDataDisruptionSquidContainer extends Component {
+class FsDataDisruptionSquidContainer extends Component {
   disruptionsUrl = 'https://cors-anywhere.herokuapp.com/https://status.fsdata.se/feed/'
 
   constructor(props) {
@@ -72,3 +72,5 @@ export class FsDataDisruptionSquidContainer extends Component {
     )
   }
 }
+
+export { FsDataDisruptionSquidContainer as DataDisruptionSquid }

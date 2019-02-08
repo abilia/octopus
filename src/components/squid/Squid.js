@@ -2,11 +2,14 @@ import React from 'react'
 import styles from './Squid.module.css'
 
 export function Squid(props) {
-  const { squidData } = props
+  const { squidData, dangerMode } = props
 
   return (
     <article key={squidData.id} className={styles.squid} style={getStyle(squidData)}>
-      <header>{squidData.name}</header>
+      <header>
+        {squidData.name}
+        {dangerMode ? <span className={styles.danger} role="img" aria-label="warning">🛑</span> : null}
+      </header>
       <div>
         {squidData.component}
       </div>
