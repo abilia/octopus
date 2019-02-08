@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styles from './Dashboard.module.css'
 import { FsDataDisruptionSquidContainer } from '../squidFsDataDisruption/FsDataDisruptionSquidContainer'
 import { BibleWordOfTodaySquidContainer } from '../squidBibleWordOfToday/BibleWordOfTodaySquidContainer'
+import { Squid } from '../squid/Squid'
 
 export class Dashboard extends Component {
   constructor(props) {
@@ -30,29 +31,10 @@ export class Dashboard extends Component {
     }
   }
 
-  getStyle(squid) {
-    return {
-      gridColumnStart: squid.colStart,
-      gridColumnEnd: squid.colEnd,
-      gridRowStart: squid.rowStart,
-      gridRowEnd: squid.rowEnd
-    }
-  }
-
   render() {
     return (
       <main className={styles.dashboard}>
-
-        {this.state.squids.map(squid => {
-          return (
-            <article key={squid.id} className={styles.squid} style={this.getStyle(squid)}>
-              <header>{squid.name}</header>
-              <div className={styles.content}>
-                {squid.component}
-              </div>
-            </article>
-          )
-        })}
+        {this.state.squids.map(squidData => <Squid squidData={squidData} key={squidData.id}/>)}
       </main>
     )
   }
