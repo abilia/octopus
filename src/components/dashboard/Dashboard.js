@@ -8,7 +8,6 @@ export class Dashboard extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      dangerMode: false,
       squids: [
         {
           name: 'Driftstörningar',
@@ -43,9 +42,13 @@ export class Dashboard extends Component {
     const squids = this.configureSquid(this.state.squids)
 
     return (
-      <main className={styles.dashboard}>
+      <main className={getMainClassNames(this.props)}>
         {squids.map(squidData => <Squid squidData={squidData} key={squidData.id}/>)}
       </main>
     )
   }
+}
+
+function getMainClassNames(dashboardProps) {
+  return `${dashboardProps.dangerMode ? 'dangerMode' : ''} ${styles.dashboard}`
 }
