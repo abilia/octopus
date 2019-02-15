@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { FsDataDisruptionSquid } from './FsDataDisruptionSquid'
-import { formatDateTime } from '../../common/utils'
-import { LoadingSpinner } from '../loadingSpinner/LoadingSpinner'
-import { fetchXml } from '../../common/http'
-import { FIVE_MINUTES } from '../../common/constants'
+import { formatDateTime } from '../../../common/utils'
+import { LoadingSpinner } from '../../loadingSpinner/LoadingSpinner'
+import { fetchXml } from '../../../common/http'
+import { FIVE_MINUTES } from '../../../common/constants'
 
 class FsDataDisruptionSquidContainer extends Component {
   disruptionsUrl = 'https://cors-anywhere.herokuapp.com/https://status.fsdata.se/feed/'

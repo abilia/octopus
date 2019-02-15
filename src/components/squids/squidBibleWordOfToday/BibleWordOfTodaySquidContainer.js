@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { BibleWordOfTodaySquid } from './BibleWordOfTodaySquid'
-import { ONE_DAY } from '../../common/constants'
-import { LoadingSpinner } from '../loadingSpinner/LoadingSpinner'
-import { extractTextFromHtml } from '../../common/utils'
-import { fetchXml } from '../../common/http'
+import { ONE_DAY } from '../../../common/constants'
+import { LoadingSpinner } from '../../loadingSpinner/LoadingSpinner'
+import { extractTextFromHtml } from '../../../common/utils'
+import { fetchXml } from '../../../common/http'
 
 class BibleWordOfTodaySquidContainer extends Component {
   updateInterval
