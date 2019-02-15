@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
