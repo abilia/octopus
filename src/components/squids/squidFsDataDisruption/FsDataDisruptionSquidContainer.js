@@ -33,7 +33,7 @@ class FsDataDisruptionSquidContainer extends Component {
     const extractedDisruptions = disruptions.rss.channel[0].item.map(disruption => {
         return {
           id: Math.random(),
-          date: formatDateTime(new Date(disruption.pubDate[0]).toISOString()),
+          date: formatDateTime(disruption.pubDate[0]),
           title: disruption.title[0],
           link: disruption.link[0],
           active: disruption.active

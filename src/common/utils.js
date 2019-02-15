@@ -1,12 +1,9 @@
-export function formatDateTime(isoDateAsString) {
-    const dateTime = new Date(isoDateAsString);
-
-    const paddingZero = (number) => { return number < 10 ? '0' + number : number };
-    return dateTime.getFullYear() + '-' + paddingZero(dateTime.getMonth()+1) + '-' + paddingZero(dateTime.getDay())
-    + ' ' + paddingZero(dateTime.getHours()) + ':' + paddingZero(dateTime.getMinutes());
+export function formatDateTime(dateTime) {
+  const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }
+  return new Date(dateTime).toLocaleString('sv', options)
 }
 
 export function extractTextFromHtml(html) {
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    return doc.body.textContent || "";
+  const doc = new DOMParser().parseFromString(html, 'text/html')
+  return doc.body.textContent || ''
 }
