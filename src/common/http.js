@@ -12,3 +12,10 @@ export async function fetchXml(url, successCallback, errorCallback) {
     }
   })
 }
+
+export async function fetchText(url, successCallback, errorCallback) {
+  const response = await fetch(url);
+  const text = await response.text();
+
+  successCallback(text);
+}

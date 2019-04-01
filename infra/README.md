@@ -1,12 +1,20 @@
-# Check certificate service
+# Infrastructure and background services 
 
-Download [shell2http](https://github.com/msoap/shell2http)
+## Check certificate service
+Run `open_ssl` to check certificate at terminal. Present as http service at `http://localhost:3042/check-cert`
+
+### Install
+```
+sudo snap install shell2http
+```
+
+Or download [shell2http](https://github.com/msoap/shell2http)
 
 ```
 wget https://github.com/msoap/shell2http/releases/download/1.7/shell2http-1.7.linux.amd64.zip
 ```
 
-Unpack, move and link executable
+And unpack, move and link executable
 
 ```
 unzip shell2http-1.7.linux.amd64.zip
@@ -15,7 +23,8 @@ sudo cp shell2http /opt/ocopus/.
 sudo ln -s /opt/octopus/shell2http /usr/local/bin/shell2http
 ```
 
-Edit service file with host IP and which certificate to check.
+### Start
+Edit service file with which certificate to check.
 
 Start and enable service
 ```
