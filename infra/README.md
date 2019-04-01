@@ -32,3 +32,6 @@ sudo cp infra/octopus-check-cert.service /etc/systemd/system/octopus-check-cert.
 sudo systemctl start octopus-check-cert.service
 sudo systemctl enable octopus-check-cert.service
 ```
+
+### Configure nginx
+Proxy `/check-cert` to `http://localhost:3042`
