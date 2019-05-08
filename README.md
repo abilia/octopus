@@ -13,6 +13,16 @@ See [wiki](https://github.com/abilia/octopus/wiki) for current status and backlo
 ### Scripts
 Start application in development mode
 
+First start the `mockdevserver`. It mocks the certificate backend service.
+```
+cd mockdevserver
+yarn start
+```
+
+Or you can set up the `octopus-service` as described in the [infra/README](https://github.com/abilia/octopus/infra/README.md).
+
+After that start octopus with
+
 ```
 yarn start
 ```
