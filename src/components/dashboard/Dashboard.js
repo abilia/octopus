@@ -4,6 +4,8 @@ import { Squid } from '../squid/Squid'
 import { DataDisruptionSquid } from '../squids/squidFsDataDisruption/FsDataDisruptionSquidContainer'
 import { BibleWordSquid } from '../squids/squidBibleWordOfToday/BibleWordOfTodaySquidContainer'
 import { CheckCertificateSquid } from "../squids/squidCheckCertificate/CheckCertificateSquidContainer";
+import { AdventOfCodeSquid } from "../squids/squidAdventOfCode/AdventOfCodeSquidContainer";
+import { PlaceholderSquid } from '../squids/squidPlaceholder/PlaceholderSquidContainer';
 
 export class Dashboard extends Component {
   constructor(props) {
@@ -33,6 +35,22 @@ export class Dashboard extends Component {
           colEnd: 13,
           rowStart: 1,
           rowEnd: 5
+        },
+        {
+          name: 'AdventOfCode 2019',
+          component: <AdventOfCodeSquid />,
+          colStart: 5,
+          colEnd: 15,
+          rowStart: 7,
+          rowEnd: 14
+        },
+        {
+          name: 'Placeholder',
+          component: <PlaceholderSquid />,
+          colStart: 1,
+          colEnd: 5,
+          rowStart: 13,
+          rowEnd: 20
         }
       ]
     }

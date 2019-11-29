@@ -54,6 +54,7 @@ class FsDataDisruptionSquidContainer extends Component {
   }
 
   async loadFeed() {
+    //TODO: SSL certificate..?
     await fetchXml(this.disruptionsUrl, this.extractDisruptions)
   }
 
