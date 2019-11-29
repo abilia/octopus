@@ -18,7 +18,7 @@ class AdventOfCodeSquidContainer extends Component {
 
   async componentDidMount() {
     this.getLeaderboard().then(() => {
-      this.updateInterval = setInterval(this.getLeaderboard, 50000)
+      this.updateInterval = setInterval(this.getLeaderboard, SIX_HOURS)
     })
   }
 

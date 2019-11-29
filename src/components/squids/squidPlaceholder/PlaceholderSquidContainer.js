@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { PlaceholderSquid } from './PlaceholderSquid'
 import { LoadingSpinner } from '../../loadingSpinner/LoadingSpinner'
 import { fetchJson } from '../../../common/http'
-import { FIVE_MINUTES } from "../../../common/constants";
+import { ONE_DAY } from "../../../common/constants";
 
 class PlaceholderSquidContainer extends Component {
   jsonplaceholderUrl = 'https://jsonplaceholder.typicode.com/users/'
@@ -17,7 +17,7 @@ class PlaceholderSquidContainer extends Component {
 
   async componentDidMount() {
     this.loadTodos().then(() => {
-      this.interval = setInterval(() => this.loadTodos(), FIVE_MINUTES)
+      this.interval = setInterval(() => this.loadTodos(), ONE_DAY)
     })
   }
 
