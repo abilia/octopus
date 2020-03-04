@@ -6,7 +6,9 @@ import { fetchJson } from '../../../common/http'
 
 class AdventOfCodeSquidContainer extends Component {
   updateInterval
-  adventOfCodeUrl = 'https://cors-anywhere.herokuapp.com/https://adventofcode.com/2019/leaderboard/private/view/629785.json'
+  //adventOfCodeUrl = 'https://cors-anywhere.herokuapp.com/https://adventofcode.com/2019/leaderboard/private/view/629785.json'
+  //adventOfCodeUrl = 'https://adventofcode.com/2019/leaderboard/private/view/629785.json'
+  adventOfCodeUrl = '/adventofcode'
 
   constructor(props) {
     super(props)
@@ -32,9 +34,8 @@ class AdventOfCodeSquidContainer extends Component {
   }
 
   leaderboardExtractor = (leaderboard) => {
-    console.log(leaderboard);
     this.setState({
-
+      leaderboard: leaderboard
     })
   }
 
@@ -44,6 +45,7 @@ class AdventOfCodeSquidContainer extends Component {
     return (
       leaderboard ? (
         <AdventOfCodeSquid
+          leaderboard={leaderboard}
         />
       ) : <LoadingSpinner/>
     )
