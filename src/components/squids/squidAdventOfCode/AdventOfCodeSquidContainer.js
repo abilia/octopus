@@ -7,6 +7,7 @@ import { fetchJson } from '../../../common/http'
 class AdventOfCodeSquidContainer extends Component {
   updateInterval
   adventOfCodeUrl = 'https://cors-anywhere.herokuapp.com/https://adventofcode.com/2019/leaderboard/private/view/629785.json'
+  // adventOfCodeUrl = '/adventofcode'
 
   constructor(props) {
     super(props)
@@ -27,7 +28,7 @@ class AdventOfCodeSquidContainer extends Component {
   }
 
   async getLeaderboard() {
-    //TODO: Session cookie needed
+    //TODO: Session cookie needed (logged in)
     await fetchJson(this.adventOfCodeUrl, this.leaderboardExtractor)
   }
 

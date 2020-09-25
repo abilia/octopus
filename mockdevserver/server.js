@@ -14,6 +14,10 @@ app.use('/bible', function(req, res) {
   request("https://old.bibeln.se/rss/dagens-bibelord.xml").pipe(res);
 });
 
+app.use('/adventofcode', function(req, res) {
+  request("https://adventofcode.com/2019/leaderboard/private/view/629785.json").pipe(res);
+})
+
 app.listen(PORT, () => {
     console.log('Server is running at:',PORT);
 });

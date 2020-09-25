@@ -34,7 +34,7 @@ class CheckCertificateSquidContainer extends Component {
     const notAfter = valid.split("\n")[1].split("=")[1];
     const timeLeft = Date.parse(notAfter) - Date.now();
 
-    if (timeLeft < 0) {
+    if (timeLeft - (3 * ONE_DAY) < 0) {
       this.props.setDangerMode(true);
     }
 
