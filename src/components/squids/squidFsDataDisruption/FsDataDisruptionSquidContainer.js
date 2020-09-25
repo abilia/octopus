@@ -6,8 +6,8 @@ import { fetchXml } from '../../../common/http'
 import { FIVE_MINUTES } from '../../../common/constants'
 
 class FsDataDisruptionSquidContainer extends Component {
-  disruptionsUrl = 'https://cors-anywhere.herokuapp.com/https://status.fsdata.se/feed/'
-  //disruptionsUrl = '/fsdata';
+  // disruptionsUrl = 'https://cors-anywhere.herokuapp.com/https://status.fsdata.se/feed/'
+  disruptionsUrl = '/fsdata';
 
   constructor(props) {
     super(props)

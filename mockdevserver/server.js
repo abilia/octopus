@@ -7,7 +7,7 @@ const PORT = 3042;
 app.use('/check-cert', express.static('public/mock-check-cert'));
 
 app.use('/fsdata', function(req, res) {
-  request("https://status.fsdata.se/feed").pipe(res);
+  request({uri: "https://status.fsdata.se/feed", rejectUnauthorized: false}).pipe(res);
 });
 
 app.use('/bible', function(req, res) {

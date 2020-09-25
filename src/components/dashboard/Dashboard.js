@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Dashboard.module.css'
 import { Squid } from '../squid/Squid'
-// import { DataDisruptionSquid } from '../squids/squidFsDataDisruption/FsDataDisruptionSquidContainer'
+import { DataDisruptionSquid } from '../squids/squidFsDataDisruption/FsDataDisruptionSquidContainer'
 import { BibleWordSquid } from '../squids/squidBibleWordOfToday/BibleWordOfTodaySquidContainer'
 import { CheckCertificateSquid } from "../squids/squidCheckCertificate/CheckCertificateSquidContainer";
 // import { AdventOfCodeSquid } from "../squids/squidAdventOfCode/AdventOfCodeSquidContainer";
@@ -12,7 +12,6 @@ export class Dashboard extends Component {
     super(props)
     this.state = {
       squids: [
-        /*
         {
           name: 'Driftstörningar',
           component: <DataDisruptionSquid/>,
@@ -21,7 +20,6 @@ export class Dashboard extends Component {
           rowStart: 1,
           rowEnd: 13
         },
-        */
         {
           name: 'Dagens bibelord',
           component: <BibleWordSquid/>,
