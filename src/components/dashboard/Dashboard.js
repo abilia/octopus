@@ -4,7 +4,7 @@ import { Squid } from '../squid/Squid'
 import { DataDisruptionSquid } from '../squids/squidFsDataDisruption/FsDataDisruptionSquidContainer'
 import { BibleWordSquid } from '../squids/squidBibleWordOfToday/BibleWordOfTodaySquidContainer'
 import { CheckCertificateSquid } from "../squids/squidCheckCertificate/CheckCertificateSquidContainer";
-// import { AdventOfCodeSquid } from "../squids/squidAdventOfCode/AdventOfCodeSquidContainer";
+import { AdventOfCodeSquid } from "../squids/squidAdventOfCode/AdventOfCodeSquidContainer";
 import { PlaceholderSquid } from '../squids/squidPlaceholder/PlaceholderSquidContainer';
 
 export class Dashboard extends Component {
@@ -12,6 +12,7 @@ export class Dashboard extends Component {
     super(props)
     this.state = {
       squids: [
+        /*
         {
           name: 'Driftstörningar',
           component: <DataDisruptionSquid/>,
@@ -19,7 +20,7 @@ export class Dashboard extends Component {
           colEnd: 5,
           rowStart: 1,
           rowEnd: 13
-        },
+        },*/
         {
           name: 'Dagens bibelord',
           component: <BibleWordSquid/>,
