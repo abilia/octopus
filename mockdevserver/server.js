@@ -11,7 +11,7 @@ app.use('/fsdata', function(req, res) {
 });
 
 app.use('/bible', function(req, res) {
-  request("http://www.bibeln.se/rss/dagens-bibelord.xml").pipe(res);
+  request("https://old.bibeln.se/rss/dagens-bibelord.xml").pipe(res);
 });
 
 app.listen(PORT, () => {

@@ -7,8 +7,8 @@ import { fetchXml } from '../../../common/http'
 
 class BibleWordOfTodaySquidContainer extends Component {
   updateInterval
-  bibleWordUrl = 'https://cors-anywhere.herokuapp.com/http://www.bibeln.se/rss/dagens-bibelord.xml'
-  //bibleWordUrl = '/bible'
+  bibleWordUrl = 'https://cors-anywhere.herokuapp.com/https://old.bibeln.se/rss/dagens-bibelord.xml'
+  // bibleWordUrl = '/bible'
 
   constructor(props) {
     super(props)
