@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import styles from './Dashboard.module.css'
 import { Squid } from '../squid/Squid'
-import { DataDisruptionSquid } from '../squids/squidFsDataDisruption/FsDataDisruptionSquidContainer'
+// import { DataDisruptionSquid } from '../squids/squidFsDataDisruption/FsDataDisruptionSquidContainer'
 import { BibleWordSquid } from '../squids/squidBibleWordOfToday/BibleWordOfTodaySquidContainer'
 import { CheckCertificateSquid } from "../squids/squidCheckCertificate/CheckCertificateSquidContainer";
-import { AdventOfCodeSquid } from "../squids/squidAdventOfCode/AdventOfCodeSquidContainer";
+// import { AdventOfCodeSquid } from "../squids/squidAdventOfCode/AdventOfCodeSquidContainer";
 import { PlaceholderSquid } from '../squids/squidPlaceholder/PlaceholderSquidContainer';
 
 export class Dashboard extends Component {
