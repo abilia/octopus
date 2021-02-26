@@ -13,9 +13,12 @@ See [wiki](https://github.com/abilia/octopus/wiki) for current status and backlo
 ### Scripts
 Start application in development mode
 
+If this is the first time run
+
 First start the `mockdevserver`. It mocks the certificate backend service.
 ```
 cd mockdevserver
+yarn install
 yarn start
 ```
 
@@ -24,7 +27,8 @@ Or you can set up the `octopus-service` as described in the [infra/README](https
 After that start octopus with
 
 ```
-yarn start
+npm install
+npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
